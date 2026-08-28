@@ -11,9 +11,9 @@
   --shadow: 0 20px 55px rgba(23, 34, 30, .08);
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; min-width: 0; }
 html { scroll-behavior: smooth; }
-body { margin: 0; color: var(--ink); background: var(--paper); font-family: "DM Sans", sans-serif; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: "DM Sans", sans-serif; overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
 .page-shell { max-width: 1440px; margin: 0 auto; padding: 0 5.5%; overflow: hidden; }
 .site-header { height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
@@ -114,7 +114,7 @@ td:nth-child(2), td:nth-child(3), td:nth-child(4) { color: var(--muted); font-we
 }
 
 body { background: var(--paper); }
-.page-shell { max-width: 1280px; overflow: visible; }
+.page-shell { width: 100%; max-width: 1280px; overflow: visible; }
 .site-header { position: sticky; top: 0; z-index: 20; height: 84px; background: rgba(247, 248, 245, .96); border-bottom: 1px solid transparent; backdrop-filter: blur(10px); }
 .brand-mark { color: var(--green-dark); background: var(--lime); border-radius: 50%; }
 .main-nav a:hover, .main-nav a.active { color: var(--green); }
@@ -156,10 +156,11 @@ h1 em { color: var(--lime); }
 .brand small { margin: 0 0 0 10px; color: var(--green); font-size: .95rem; letter-spacing: .14em; }
 .brand .season-label { display: block; margin: 7px 0 0; color: var(--orange); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; }
 
-.matches-section { max-width: 1080px; margin: 0 auto; padding: 48px 0 80px; }
+.matches-section { width: 100%; max-width: 1080px; margin: 0 auto; padding: 48px 0 80px; }
 .matches-section .section-heading { margin-bottom: 24px; }
 .matches-section h1 { color: var(--green-dark); font-size: clamp(2.5rem, 5vw, 4.5rem); }
 .matches-table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+.matches-card-list { display: none; }
 .matches-table { min-width: 700px; width: 100%; border-collapse: collapse; font-size: .86rem; }
 .matches-table th { padding: 14px 18px; color: #fff; background: var(--green); border: 0; font-size: .68rem; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
 .matches-table th:first-child { border-radius: 9px 0 0 0; text-align: center; }
@@ -178,7 +179,7 @@ h1 em { color: var(--lime); }
 .matches-total-row th { font-size: .72rem; letter-spacing: .08em; text-align: right; text-transform: uppercase; }
 .matches-total-row td { text-align: center; }
 
-.goalscorer-section { max-width: 650px; margin: 0 auto; padding: 0 0 80px; }
+.goalscorer-section { width: 100%; max-width: 650px; margin: 0 auto; padding: 0 0 80px; }
 .goalscorer-section h2 { color: var(--green-dark); }
 .goalscorer-table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
 .goalscorer-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
@@ -194,7 +195,7 @@ h1 em { color: var(--lime); }
 .goalscorer-total-row th { font-size: .72rem; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
 .goalscorer-total-row td { text-align: center; }
 
-.summary-section { max-width: 650px; margin: 0 auto; padding: 0 0 80px; }
+.summary-section { width: 100%; max-width: 650px; margin: 0 auto; padding: 0 0 80px; }
 .summary-section h2 { color: var(--green-dark); }
 .summary-table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
 .summary-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
@@ -204,7 +205,7 @@ h1 em { color: var(--lime); }
 .summary-table tbody tr:last-child td { border-bottom: 0; }
 .summary-table tbody tr:hover { background: #f7fbff; }
 
-.last-season-section { max-width: 650px; margin: 0 auto; padding: 0 0 80px; }
+.last-season-section { width: 100%; max-width: 650px; margin: 0 auto; padding: 0 0 80px; }
 .last-season-section h2 { color: var(--green-dark); }
 .last-season-table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
 .last-season-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
@@ -222,7 +223,7 @@ h1 em { color: var(--lime); }
 
 @media (max-width: 560px) {
   .matches-section { padding: 36px 0 56px; }
-  .matches-table-wrap, .goalscorer-table-wrap, .summary-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .matches-table-wrap, .goalscorer-table-wrap, .summary-table-wrap, .last-season-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .matches-table { min-width: 620px; }
   .matches-table th, .matches-table td { padding: 13px 12px; white-space: nowrap; }
   .matches-table th:first-child, .matches-table td:first-child { position: sticky; left: 0; }
@@ -279,24 +280,21 @@ h1 em { color: var(--lime); }
 .team-badge { color: var(--green-dark); background: var(--lime); }
 
 @media (max-width: 560px) {
-  /* Turn each match into a compact card instead of forcing six columns to scroll. */
   .matches-table-wrap { overflow: visible; background: transparent; border: 0; box-shadow: none; }
-  .matches-table { display: block; min-width: 0; }
-  .matches-table thead { display: none; }
-  .matches-table tbody, .matches-table tfoot { display: block; }
-  .matches-table tbody tr { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 18px; margin-bottom: 10px; padding: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 3px 10px rgba(6, 59, 136, .04); }
-  .matches-table tbody td { display: block; padding: 2px 0; border: 0; text-align: right; white-space: normal; }
-  .matches-table tbody td:first-child { position: static; grid-column: 1; grid-row: 1; padding: 0; color: var(--muted); background: transparent; font-size: .68rem; text-align: left; }
-  .matches-table tbody td:nth-child(2) { grid-column: 1 / -1; grid-row: 2; padding: 2px 0 9px; color: var(--green-dark); font-size: 1rem; font-weight: 700; text-align: left; }
-  .matches-table tbody td:nth-child(3) { grid-column: 1; grid-row: 3; text-align: left; }
-  .matches-table tbody td:nth-child(4) { grid-column: 2; grid-row: 3; }
-  .matches-table tbody td:nth-child(5) { grid-column: 1; grid-row: 4; padding-top: 8px; border-top: 1px solid var(--line); text-align: left; }
-  .matches-table tbody td:nth-child(6) { grid-column: 2; grid-row: 4; padding-top: 8px; border-top: 1px solid var(--line); }
-  .matches-table tbody td:nth-child(3)::before { content: "Type: "; color: var(--muted); font-size: .66rem; }
-  .matches-table tbody td:nth-child(4)::before { content: "Result: "; color: var(--muted); font-size: .66rem; }
-  .matches-table tbody td:nth-child(5)::before { content: "Scored: "; color: var(--muted); font-size: .66rem; }
-  .matches-table tbody td:nth-child(6)::before { content: "Conceded: "; color: var(--muted); font-size: .66rem; }
-  .matches-table tfoot tr { display: grid; grid-template-columns: 1fr auto auto; align-items: center; padding: 0 16px; border-radius: 8px; }
-  .matches-table tfoot th { grid-column: 1; padding: 16px 0; text-align: left; }
-  .matches-table tfoot td { padding: 16px 0 16px 14px; }
+  .matches-table { display: none; }
+  .matches-card-list { display: grid; width: 100%; min-width: 0; gap: 10px; }
+  .match-card-item { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; min-width: 0; gap: 5px; padding: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 3px 10px rgba(6, 59, 136, .04); }
+  .match-card-top { display: flex; grid-column: 1; align-items: center; justify-content: space-between; min-width: 0; }
+  .match-number { color: var(--muted); font-size: .68rem; font-weight: 700; }
+  .match-result { font-size: .72rem; font-weight: 700; text-transform: uppercase; }
+  .match-result.win { color: #168043; }
+  .match-result.loss { color: #c1353e; }
+  .match-card-item h2 { grid-column: 1; min-width: 0; color: var(--green-dark); font-size: 1rem; letter-spacing: 0; overflow-wrap: anywhere; }
+  .match-card-item p { grid-column: 1; margin: 0 0 4px; color: var(--muted); font-size: .72rem; }
+  .match-score { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-column: 1; min-width: 0; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted); font-size: .68rem; }
+  .match-score span { min-width: 0; white-space: nowrap; }
+  .match-score span:last-child { text-align: right; }
+  .match-score strong { margin-left: 4px; color: var(--green-dark); font-size: .9rem; }
+  .matches-card-total { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; align-items: center; width: 100%; min-width: 0; padding: 16px; color: #fff; background: var(--green); border-radius: 8px; font-size: .72rem; }
+  .matches-card-total span { white-space: nowrap; }
 }
