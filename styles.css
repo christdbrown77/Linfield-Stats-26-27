@@ -156,9 +156,23 @@ h1 em { color: var(--lime); }
 .brand small { margin: 0 0 0 10px; color: var(--green); font-size: .95rem; letter-spacing: .14em; }
 .brand .season-label { display: block; margin: 7px 0 0; color: var(--orange); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; }
 
-.matches-section { width: 100%; max-width: 1080px; margin: 0 auto; padding: 48px 0 80px; }
+.squad-section { width: 100%; max-width: 650px; margin: 0 auto; padding: 48px 0 80px; }
+.squad-section .section-heading { margin-bottom: 24px; }
+.squad-section h1 { color: var(--green-dark); font-size: clamp(2.5rem, 5vw, 4.5rem); }
+.squad-table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+.squad-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+.squad-table th { padding: 14px 18px; color: #fff; background: var(--green); border: 0; font-size: .68rem; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+.squad-table th:first-child { border-radius: 9px 0 0 0; }
+.squad-table th:last-child { border-radius: 0 9px 0 0; }
+.squad-table th:not(:first-child), .squad-table td:not(:first-child) { text-align: center; }
+.squad-table td { padding: 14px 18px; color: var(--ink); border-bottom: 1px solid var(--line); font-weight: 500; }
+.squad-table td:not(:first-child) { color: var(--green-dark); font-weight: 700; }
+.squad-table tbody tr:last-child td { border-bottom: 0; }
+.squad-table tbody tr:hover { background: #f7fbff; }
+
+.matches-section { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 0 80px; }
 .matches-section .section-heading { margin-bottom: 24px; }
-.matches-section h1 { color: var(--green-dark); font-size: clamp(2.5rem, 5vw, 4.5rem); }
+.matches-section h2 { color: var(--green-dark); }
 .matches-table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
 .matches-card-list { display: none; }
 .matches-table { min-width: 700px; width: 100%; border-collapse: collapse; font-size: .86rem; }
@@ -222,15 +236,16 @@ h1 em { color: var(--lime); }
 .last-season-total-row td { text-align: center; }
 
 @media (max-width: 560px) {
-  .matches-section { padding: 36px 0 56px; }
-  .matches-table-wrap, .goalscorer-table-wrap, .summary-table-wrap, .last-season-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .squad-section { padding: 36px 0 56px; }
+  .matches-section { padding: 0 0 56px; }
+  .squad-table-wrap, .matches-table-wrap, .goalscorer-table-wrap, .summary-table-wrap, .last-season-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .matches-table { min-width: 620px; }
   .matches-table th, .matches-table td { padding: 13px 12px; white-space: nowrap; }
   .matches-table th:first-child, .matches-table td:first-child { position: sticky; left: 0; }
   .matches-table th:first-child { z-index: 2; background: var(--green); }
   .matches-table td:first-child { z-index: 1; background: var(--panel); }
   .matches-total-row td:first-child, .matches-total-row th:first-child { background: var(--green); }
-  .goalscorer-table th, .goalscorer-table td, .summary-table th, .summary-table td { padding: 13px 14px; }
+  .squad-table th, .squad-table td, .goalscorer-table th, .goalscorer-table td, .summary-table th, .summary-table td { padding: 13px 14px; }
   .goalscorer-section { padding-bottom: 56px; }
   .summary-section { padding-bottom: 56px; }
   .last-season-section { padding-bottom: 56px; }
