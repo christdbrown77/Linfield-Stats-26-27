@@ -295,21 +295,36 @@ h1 em { color: var(--lime); }
 .team-badge { color: var(--green-dark); background: var(--lime); }
 
 @media (max-width: 560px) {
-  .matches-table-wrap { overflow: visible; background: transparent; border: 0; box-shadow: none; }
+  .matches-table-wrap { overflow: visible; background: transparent; border: 0; box-shadow: none; padding: 0; }
   .matches-table { display: none; }
   .matches-card-list { display: grid; width: 100%; min-width: 0; gap: 10px; }
-  .match-card-item { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; min-width: 0; gap: 5px; padding: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 3px 10px rgba(6, 59, 136, .04); }
-  .match-card-top { display: flex; grid-column: 1; align-items: center; justify-content: space-between; min-width: 0; }
+  .match-card-item { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; width: 100%; min-width: 0; gap: 12px 14px; padding: 14px 16px 14px 19px; overflow: hidden; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 3px 10px rgba(6, 59, 136, .05); transition: transform .15s ease, box-shadow .15s ease; }
+  .match-card-item:active { transform: scale(.985); }
+  .match-card-item::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 5px; }
+  .match-card-item.win::before { background: #168043; }
+  .match-card-item.loss::before { background: #c1353e; }
+  .match-card-item.draw::before { background: var(--orange); }
+  .match-card-top { display: flex; grid-column: 1 / -1; align-items: center; gap: 8px; min-width: 0; }
   .match-number { color: var(--muted); font-size: .68rem; font-weight: 700; }
-  .match-result { font-size: .72rem; font-weight: 700; text-transform: uppercase; }
-  .match-result.win { color: #168043; }
-  .match-result.loss { color: #c1353e; }
-  .match-card-item h2 { grid-column: 1; min-width: 0; color: var(--green-dark); font-size: 1rem; letter-spacing: 0; overflow-wrap: anywhere; }
-  .match-card-item p { grid-column: 1; margin: 0 0 4px; color: var(--muted); font-size: .72rem; }
-  .match-score { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-column: 1; min-width: 0; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted); font-size: .68rem; }
-  .match-score span { min-width: 0; white-space: nowrap; }
-  .match-score span:last-child { text-align: right; }
-  .match-score strong { margin-left: 4px; color: var(--green-dark); font-size: .9rem; }
-  .matches-card-total { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; align-items: center; width: 100%; min-width: 0; padding: 16px; color: #fff; background: var(--green); border-radius: 8px; font-size: .72rem; }
-  .matches-card-total span { white-space: nowrap; }
+  .match-number::before { content: "#"; }
+  .match-type { padding: 3px 9px; color: var(--muted); background: var(--paper); border: 1px solid var(--line); border-radius: 99px; font-size: .6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+  .match-type.cup { color: var(--orange); background: #fdf0c8; border-color: transparent; }
+  .match-result { margin-left: auto; padding: 4px 10px; color: #fff; border-radius: 99px; font-size: .6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+  .match-result.win { background: #168043; }
+  .match-result.loss { background: #c1353e; }
+  .match-result.draw { color: var(--green-dark); background: var(--lime); }
+  .match-card-item h2 { grid-column: 1; min-width: 0; margin: 0; color: var(--green-dark); font-size: 1.08rem; font-weight: 700; letter-spacing: 0; overflow-wrap: anywhere; }
+  .match-score { display: flex; grid-column: 2; align-items: center; gap: 8px; }
+  .match-score-col { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+  .match-score-num { font-family: "Teko", "Space Grotesk", sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--green-dark); line-height: .9; }
+  .match-score-label { color: var(--muted); font-size: .56rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .match-score-sep { align-self: flex-start; margin-top: 8px; color: var(--muted); font-size: 1.3rem; font-weight: 500; }
+  .matches-card-total { display: grid; gap: 12px; width: 100%; min-width: 0; padding: 16px; margin-top: 2px; color: var(--green-dark); background: var(--lime); border-radius: 12px; }
+  .matches-card-total-top { display: flex; align-items: baseline; justify-content: space-between; }
+  .matches-card-total-top strong { font-size: .84rem; letter-spacing: .01em; }
+  .matches-card-total-top span { font-size: .62rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; opacity: .7; }
+  .matches-card-total-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
+  .matches-card-total-grid div { padding: 8px 4px; background: rgba(255, 255, 255, .38); border-radius: 7px; }
+  .matches-card-total-grid strong { font-family: "Teko", "Space Grotesk", sans-serif; display: block; font-size: 1.4rem; font-weight: 700; line-height: 1.1; }
+  .matches-card-total-grid span { display: block; margin-top: 2px; font-size: .56rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; opacity: .75; }
 }
