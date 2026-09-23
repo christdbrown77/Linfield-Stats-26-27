@@ -157,9 +157,12 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
   .page-shell { padding: 0 20px; }
   .site-header { height: 102px; padding: 10px 12px; }
   .section-heading { align-items: start; flex-direction: column; }
+  .brand { align-items: stretch; }
   .brand-logo { width: 70px; height: 78px; }
-  .brand strong { font-size: .95rem; }
-  .brand small { margin-left: 6px; font-size: .62rem; }
+  .brand > span { display: flex; flex-direction: column; justify-content: center; gap: 6px; }
+  .brand strong { font-size: 1.3rem; }
+  .brand small { margin-left: 6px; font-size: .88rem; }
+  .brand .eyebrow { margin-bottom: 0; font-size: .7rem; }
 
   .contents-nav { padding: 20px 0 36px; }
   .contents-inner { flex-direction: column; align-items: stretch; gap: 14px; padding: 18px 16px; }
