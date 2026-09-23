@@ -32,10 +32,17 @@ a { color: inherit; text-decoration: none; }
 
 .eyebrow { margin: 0 0 14px; color: var(--orange); font-size: .66rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
 
-h1, h2 { margin: 0; font-family: "Space Grotesk", sans-serif; }
+h1, h2 { margin: 0; font-family: "Space Grotesk", sans-serif; scroll-margin-top: 140px; }
 h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -.06em; }
 
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+
+.contents-nav { width: 100%; max-width: 1080px; margin: 0 auto; padding: 28px 0 48px; }
+.contents-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 10px; padding: 18px 22px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+.contents-label { color: var(--muted); font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.contents-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.contents-list a { display: inline-flex; align-items: center; padding: 8px 16px; color: var(--green-dark); background: var(--paper); border: 1px solid var(--line); border-radius: 99px; font-size: .78rem; font-weight: 600; transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease; }
+.contents-list a:hover, .contents-list a:focus-visible { color: #fff; background: var(--green); border-color: var(--green); transform: translateY(-1px); }
 
 /* Every data section (squad, matches, goalscorers, summary, last season) shares
    this shell: a max-width column, a .section-heading, and a bordered white
@@ -116,6 +123,21 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
 .goals-by-game-table .goals-by-game-total-row td { padding: 9px 6px; color: #fff; border-top: 2px solid var(--green); border-bottom: 0; border-left: 1px solid rgba(255, 255, 255, .25); font-weight: 700; text-align: center; }
 .goals-by-game-table .goals-by-game-total-row th { padding: 9px 14px; color: #fff; border-top: 2px solid var(--green); border-bottom: 0; border-left: 0; font-weight: 700; font-size: .62rem; letter-spacing: .05em; text-align: left; text-transform: uppercase; }
 
+.last5-section { width: 100%; max-width: 650px; margin: 0 auto; padding: 0 0 80px; }
+.last5-table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+.last5-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+.last5-table th { padding: 14px 18px; color: #fff; background: var(--green); border: 0; font-size: .68rem; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+.last5-table th:first-child { border-radius: 9px 0 0 0; }
+.last5-table th:last-child { border-radius: 0 9px 0 0; text-align: center; }
+.last5-table td { padding: 14px 18px; color: var(--ink); border-bottom: 1px solid var(--line); font-weight: 500; }
+.last5-table td:last-child { color: var(--green-dark); font-weight: 700; text-align: center; }
+.last5-table tbody tr:last-child td { border-bottom: 0; }
+.last5-table tbody tr:hover { background: #f7fbff; }
+.last5-total-row { background: var(--green); }
+.last5-table .last5-total-row th, .last5-table .last5-total-row td { padding: 16px 18px; color: #fff; border-bottom: 0; font-weight: 700; }
+.last5-total-row th { font-size: .72rem; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+.last5-total-row td { text-align: center; }
+
 .last-season-section { width: 100%; max-width: 650px; margin: 0 auto; padding: 0 0 80px; }
 .last-season-table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
 .last-season-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
@@ -139,10 +161,17 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
   .brand strong { font-size: .95rem; }
   .brand small { margin-left: 6px; font-size: .62rem; }
 
-  .squad-section, .matches-section, .goalscorer-section, .summary-section, .goals-by-game-section, .last-season-section { padding-bottom: 56px; }
+  .contents-nav { padding: 20px 0 36px; }
+  .contents-inner { flex-direction: column; align-items: stretch; gap: 14px; padding: 18px 16px; }
+  .contents-label { font-size: .72rem; }
+  .contents-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .contents-list li { display: flex; }
+  .contents-list a { width: 100%; justify-content: center; padding: 12px 10px; font-size: .88rem; }
 
-  .squad-table-wrap, .matches-table-wrap, .goalscorer-table-wrap, .summary-table-wrap, .goals-by-game-table-wrap, .last-season-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .squad-table th, .squad-table td, .goalscorer-table th, .goalscorer-table td, .summary-table th, .summary-table td { padding: 13px 14px; }
+  .squad-section, .matches-section, .goalscorer-section, .summary-section, .goals-by-game-section, .last5-section, .last-season-section { padding-bottom: 56px; }
+
+  .squad-table-wrap, .matches-table-wrap, .goalscorer-table-wrap, .summary-table-wrap, .goals-by-game-table-wrap, .last5-table-wrap, .last-season-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .squad-table th, .squad-table td, .goalscorer-table th, .goalscorer-table td, .summary-table th, .summary-table td, .last5-table th, .last5-table td { padding: 13px 14px; }
 
   /* Matches swaps its table for a card list on small screens. */
   .matches-table-wrap { overflow: visible; background: transparent; border: 0; box-shadow: none; padding: 0; }
