@@ -109,7 +109,7 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
 
 .goals-by-game-section { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 0 80px; }
 .goals-by-game-table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
-.goals-by-game-table { min-width: 620px; width: 100%; border-collapse: collapse; font-size: .78rem; }
+.goals-by-game-table { min-width: 660px; width: 100%; border-collapse: collapse; font-size: .78rem; }
 .goals-by-game-table th { padding: 8px 6px; color: #fff; background: var(--green); border: 0; border-left: 1px solid rgba(255, 255, 255, .25); font-size: .62rem; letter-spacing: .05em; text-align: center; text-transform: uppercase; white-space: nowrap; }
 .goals-by-game-table th:first-child { padding-left: 14px; border-left: 0; border-radius: 9px 0 0 0; text-align: left; }
 .goals-by-game-table th:last-child { border-radius: 0 9px 0 0; }
