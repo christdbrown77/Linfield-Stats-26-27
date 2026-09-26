@@ -191,6 +191,8 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
   .match-number::before { content: "#"; }
   .match-type { padding: 3px 9px; color: var(--muted); background: var(--paper); border: 1px solid var(--line); border-radius: 99px; font-size: .6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
   .match-type.cup { color: var(--orange); background: #fdf0c8; border-color: transparent; }
+  .match-type.league { color: var(--loss); background: #fbe0e0; border-color: transparent; }
+  .match-type.friendly { color: #6d28d9; background: #ede4fb; border-color: transparent; }
   .match-result { margin-left: auto; padding: 4px 10px; color: #fff; border-radius: 99px; font-size: .6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
   .match-result.win { background: var(--win); }
   .match-result.loss { background: var(--loss); }
