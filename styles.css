@@ -90,6 +90,23 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
 .matches-total-row th { font-size: .72rem; letter-spacing: .08em; text-align: right; text-transform: uppercase; }
 .matches-total-row td { text-align: center; }
 
+.runin-section { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 0 80px; }
+.runin-table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+.runin-table { min-width: 680px; width: 100%; border-collapse: collapse; font-size: .86rem; }
+.runin-table th { padding: 14px 18px; color: #fff; background: var(--green); border: 0; font-size: .68rem; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+.runin-table th:first-child { border-radius: 9px 0 0 0; }
+.runin-table th:last-child { border-radius: 0 9px 0 0; }
+.runin-table td { padding: 14px 18px; color: var(--ink); border-bottom: 1px solid var(--line); font-weight: 500; }
+.runin-table td:first-child { color: var(--green-dark); font-weight: 700; white-space: nowrap; }
+.runin-table td:last-child { white-space: nowrap; }
+.runin-table td.home, .runin-table td.away, .runin-table td.neutral { font-weight: 700; text-transform: uppercase; font-size: .78rem; letter-spacing: .03em; white-space: nowrap; }
+.runin-table td.home { color: var(--win); }
+.runin-table td.away { color: var(--green); }
+.runin-table td.neutral { color: var(--muted); }
+.runin-table tbody tr:last-child td { border-bottom: 0; }
+.runin-table tbody tr:hover { background: #f7fbff; }
+.runin-note { margin: 12px 2px 0; color: var(--muted); font-size: .76rem; font-style: italic; }
+
 .goalscorer-section { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 0 80px; }
 .goalscorer-table-wrap { max-width: 650px; margin: 0 auto; overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
 .goalscorer-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
@@ -190,9 +207,9 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
   .contents-list li { display: flex; }
   .contents-list a { width: 100%; justify-content: center; text-align: center; padding: 12px 10px; font-size: .88rem; }
 
-  .squad-section, .matches-section, .goalscorer-section, .summary-section, .goals-by-game-section, .last5-section, .last-season-section, .potm-section { padding-bottom: 56px; }
+  .squad-section, .matches-section, .runin-section, .goalscorer-section, .summary-section, .goals-by-game-section, .last5-section, .last-season-section, .potm-section { padding-bottom: 56px; }
 
-  .squad-table-wrap, .matches-table-wrap, .goalscorer-table-wrap, .summary-table-wrap, .goals-by-game-table-wrap, .last5-table-wrap, .last-season-table-wrap, .potm-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .squad-table-wrap, .matches-table-wrap, .runin-table-wrap, .goalscorer-table-wrap, .summary-table-wrap, .goals-by-game-table-wrap, .last5-table-wrap, .last-season-table-wrap, .potm-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .squad-table th, .squad-table td, .goalscorer-table th, .goalscorer-table td, .summary-table th, .summary-table td, .last5-table th, .last5-table td, .potm-table th, .potm-table td { padding: 13px 14px; }
 
   /* Matches swaps its table for a card list on small screens. */
