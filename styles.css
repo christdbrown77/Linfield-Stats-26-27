@@ -22,7 +22,7 @@ a { color: inherit; text-decoration: none; }
 .page-shell { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 5.5%; overflow: visible; }
 
 .site-header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 28px; height: 122px; padding: 12px 24px; background: rgba(247, 248, 245, .96); border-bottom: 1px solid transparent; box-shadow: 0 4px 18px rgba(6, 59, 136, .08); backdrop-filter: blur(10px); }
-.header-rule { height: 4px; margin: 0; background: var(--green); border: 0; }
+.header-rule { position: sticky; top: 122px; z-index: 19; height: 4px; margin: 0 0 14px; background: var(--green); border: 0; }
 
 .brand { display: flex; align-items: center; gap: 10px; letter-spacing: .08em; }
 .brand-logo { width: 15%; height: auto; object-fit: contain; }
@@ -192,6 +192,7 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
 @media (max-width: 560px) {
   .page-shell { padding: 0 20px; }
   .site-header { height: 102px; padding: 10px 12px; }
+  .header-rule { top: 102px; margin: 0 0 12px; }
   .section-heading { align-items: center; }
   .back-to-top { padding: 6px 10px; font-size: .64rem; }
   .brand { align-items: stretch; }
