@@ -79,7 +79,10 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
 .matches-table td { padding: 15px 18px; color: var(--ink); border-bottom: 1px solid var(--line); font-weight: 500; }
 .matches-table tbody tr:last-child td { border-bottom: 0; }
 .matches-table td:first-child, .matches-table td:nth-last-child(-n + 2) { text-align: center; }
-.matches-table td:nth-child(3) { color: var(--muted); }
+.matches-table td:nth-child(3) { font-weight: 600; }
+.matches-table td.type-friendly { color: #6d28d9; }
+.matches-table td.type-cup { color: #0f766e; }
+.matches-table td.type-league { color: #475569; }
 .matches-table td.win, .matches-table td.loss { font-weight: 700; text-transform: capitalize; }
 .matches-table td.win { color: var(--win); }
 .matches-table td.loss { color: var(--loss); }
@@ -213,8 +216,12 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
 
   .squad-table-wrap, .matches-table-wrap, .runin-table-wrap, .goalscorer-table-wrap, .summary-table-wrap, .goals-by-game-table-wrap, .last5-table-wrap, .last-season-table-wrap, .potm-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .squad-table th, .squad-table td, .goalscorer-table th, .goalscorer-table td, .summary-table th, .summary-table td, .last5-table th, .last5-table td, .potm-table th, .potm-table td { padding: 13px 14px; }
+}
 
-  /* Matches swaps its table for a card list on small screens. */
+/* Matches and Cup Run-in swap their table for a card list any time the
+   table is too wide to fit without clipping a column (roughly tablet-
+   width and down) — not just on small phones. */
+@media (max-width: 850px) {
   .matches-table-wrap { overflow: visible; background: transparent; border: 0; box-shadow: none; padding: 0; }
   .matches-table { display: none; }
   .matches-card-list { display: grid; width: 100%; min-width: 0; gap: 10px; }
@@ -228,8 +235,8 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
   .match-number { color: var(--muted); font-size: .68rem; font-weight: 700; }
   .match-number::before { content: "#"; }
   .match-type { padding: 3px 9px; color: var(--muted); background: var(--paper); border: 1px solid var(--line); border-radius: 99px; font-size: .6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
-  .match-type.cup { color: var(--orange); background: #fdf0c8; border-color: transparent; }
-  .match-type.league { color: var(--loss); background: #fbe0e0; border-color: transparent; }
+  .match-type.cup { color: #0f766e; background: #d9f2ef; border-color: transparent; }
+  .match-type.league { color: #475569; background: #e2e8f0; border-color: transparent; }
   .match-type.friendly { color: #6d28d9; background: #ede4fb; border-color: transparent; }
   .match-result { margin-left: auto; padding: 4px 10px; color: #fff; border-radius: 99px; font-size: .6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
   .match-result.win { background: var(--win); }
@@ -242,7 +249,6 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
   .match-score-label { color: var(--muted); font-size: .56rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
   .match-score-sep { align-self: flex-start; margin-top: 8px; color: var(--muted); font-size: 1.3rem; font-weight: 500; }
 
-  /* Cup Run-in swaps its table for a card list on small screens. */
   .runin-table-wrap { overflow: visible; background: transparent; border: 0; box-shadow: none; padding: 0; }
   .runin-table { display: none; }
   .runin-card-list { display: grid; width: 100%; min-width: 0; gap: 10px; }

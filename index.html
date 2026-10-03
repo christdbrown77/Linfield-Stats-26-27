@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Teko:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=15" />
+    <link rel="stylesheet" href="styles.css?v=18" />
   </head>
   <body>
     <div class="page-shell">
@@ -192,7 +192,7 @@
                 <tr>
                   <td>1</td>
                   <td>Bangor</td>
-                  <td>Friendly</td>
+                  <td class="type-friendly">Friendly</td>
                   <td class="loss">Loss</td>
                   <td>0</td>
                   <td>4</td>
@@ -200,7 +200,7 @@
                 <tr>
                   <td>2</td>
                   <td>Shankill Juniors</td>
-                  <td>Friendly</td>
+                  <td class="type-friendly">Friendly</td>
                   <td class="loss">Loss</td>
                   <td>0</td>
                   <td>1</td>
@@ -208,7 +208,7 @@
                 <tr>
                   <td>3</td>
                   <td>Tristar Girls</td>
-                  <td>Friendly</td>
+                  <td class="type-friendly">Friendly</td>
                   <td class="win">Win</td>
                   <td>6</td>
                   <td>1</td>
@@ -216,7 +216,7 @@
                 <tr>
                   <td>4</td>
                   <td>Greenisland</td>
-                  <td>Friendly</td>
+                  <td class="type-friendly">Friendly</td>
                   <td class="win">Win</td>
                   <td>6</td>
                   <td>0</td>
@@ -224,7 +224,7 @@
                 <tr>
                   <td>5</td>
                   <td>Crumlin U17 Girls</td>
-                  <td>Friendly</td>
+                  <td class="type-friendly">Friendly</td>
                   <td class="win">Win</td>
                   <td>5</td>
                   <td>1</td>
@@ -232,7 +232,7 @@
                 <tr>
                   <td>6</td>
                   <td>Manchester United</td>
-                  <td>SuperCupNI</td>
+                  <td class="type-cup">SuperCupNI</td>
                   <td class="loss">Loss</td>
                   <td>0</td>
                   <td>2</td>
@@ -240,7 +240,7 @@
                 <tr>
                   <td>7</td>
                   <td>Glentoran</td>
-                  <td>SuperCupNI</td>
+                  <td class="type-cup">SuperCupNI</td>
                   <td class="win">Win</td>
                   <td>4</td>
                   <td>0</td>
@@ -248,7 +248,7 @@
                 <tr>
                   <td>8</td>
                   <td>Kilmarnock</td>
-                  <td>SuperCupNI</td>
+                  <td class="type-cup">SuperCupNI</td>
                   <td class="win">Win</td>
                   <td>2</td>
                   <td>0</td>
@@ -256,7 +256,7 @@
                 <tr>
                   <td>9</td>
                   <td>Peamount Utd</td>
-                  <td>SuperCupNI</td>
+                  <td class="type-cup">SuperCupNI</td>
                   <td class="win">Win</td>
                   <td>3</td>
                   <td>2</td>
@@ -264,7 +264,7 @@
                 <tr>
                   <td>10</td>
                   <td>St Malachys boys</td>
-                  <td>Friendly</td>
+                  <td class="type-friendly">Friendly</td>
                   <td class="loss">Loss</td>
                   <td>1</td>
                   <td>3</td>
@@ -272,7 +272,7 @@
                 <tr>
                   <td>11</td>
                   <td>Abbey Villa</td>
-                  <td>Friendly</td>
+                  <td class="type-friendly">Friendly</td>
                   <td class="draw">Draw</td>
                   <td>1</td>
                   <td>1</td>
@@ -280,7 +280,7 @@
                 <tr>
                   <td>12</td>
                   <td>Cliftonville Ladies</td>
-                  <td>Friendly</td>
+                  <td class="type-friendly">Friendly</td>
                   <td class="draw">Draw</td>
                   <td>0</td>
                   <td>0</td>
@@ -288,7 +288,7 @@
                 <tr>
                   <td>13</td>
                   <td>Lisburn Rangers</td>
-                  <td>League</td>
+                  <td class="type-league">League</td>
                   <td class="win">Win</td>
                   <td>3</td>
                   <td>0</td>
@@ -296,7 +296,7 @@
                 <tr>
                   <td>14</td>
                   <td>Loughgall Lakers</td>
-                  <td>League</td>
+                  <td class="type-league">League</td>
                   <td class="win">Win</td>
                   <td>12</td>
                   <td>0</td>
@@ -644,11 +644,6 @@
           </div>
           <div class="summary-table-wrap">
             <table class="summary-table">
-              <thead>
-                <tr>
-                  <th scope="col" colspan="2">Season Summary</th>
-                </tr>
-              </thead>
               <tbody>
                 <tr>
                   <td>Total Matches</td>
