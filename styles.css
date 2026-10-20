@@ -53,9 +53,9 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
 .contents-list a { display: inline-flex; align-items: center; padding: 8px 16px; color: var(--green-dark); background: var(--paper); border: 1.5px solid var(--green); border-radius: 99px; font-size: .78rem; font-weight: 700; box-shadow: 0 1px 3px rgba(6, 59, 136, .1); transition: background .18s ease, color .18s ease, transform .18s ease; }
 .contents-list a:hover, .contents-list a:focus-visible { color: #fff; background: var(--green); border-color: var(--green); transform: translateY(-1px); }
 
-/* Every data section (squad, matches, goalscorers, summary, last season) shares
-   this shell: a max-width column, a .section-heading, and a bordered white
-   .*-table-wrap panel holding a .*-table with a solid header row. */
+/* Every data section below shares this shell: a max-width column, a
+   .section-heading, and a bordered white .*-table-wrap panel holding
+   a .*-table with a solid header row. */
 
 .squad-section { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 0 80px; }
 .squad-table-wrap { max-width: 650px; margin: 0 auto; overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
@@ -102,10 +102,9 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
 .runin-table td { padding: 14px 18px; color: var(--ink); border-bottom: 1px solid var(--line); font-weight: 500; }
 .runin-table td:first-child { color: var(--green-dark); font-weight: 700; white-space: nowrap; }
 .runin-table td:last-child { white-space: nowrap; }
-.runin-table td.home, .runin-table td.away, .runin-table td.neutral { font-weight: 700; text-transform: uppercase; font-size: .78rem; letter-spacing: .03em; white-space: nowrap; }
+.runin-table td.home, .runin-table td.away { font-weight: 700; text-transform: uppercase; font-size: .78rem; letter-spacing: .03em; white-space: nowrap; }
 .runin-table td.home { color: var(--win); }
 .runin-table td.away { color: var(--green); }
-.runin-table td.neutral { color: var(--muted); }
 .runin-table tbody tr:last-child td { border-bottom: 0; }
 .runin-table tbody tr:hover { background: #f7fbff; }
 .runin-note { margin: 12px 2px 0; color: var(--muted); font-size: .76rem; font-style: italic; }
@@ -258,7 +257,6 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
   .runin-venue { padding: 4px 10px; color: #fff; border-radius: 99px; font-size: .6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
   .runin-venue.home { background: var(--win); }
   .runin-venue.away { background: var(--green); }
-  .runin-venue.neutral { background: var(--muted); }
   .runin-fixture { margin: 0; color: var(--ink); font-size: .88rem; font-weight: 500; line-height: 1.4; }
   .runin-date { margin: 0; color: var(--muted); font-size: .76rem; }
 }
