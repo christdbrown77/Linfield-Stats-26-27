@@ -17,6 +17,7 @@ Deployed via GitHub Pages directly from this repo. There is no package.json, no 
 - **Cache-busting**: `index.html` links the stylesheet as `css/styles.css?v=N`. Bump `N` by 1 any time `css/styles.css` is edited, or returning visitors' browsers will keep serving a stale cached copy.
 - **Visual verification before declaring done**: since there's no test suite, changes (especially CSS/layout) must be checked in an actual browser at desktop, tablet, and mobile widths before being considered complete. A quick local server works: `python -m http.server 8731`, then screenshot/view `http://localhost:8731/index.html` — kill the server afterward.
 - **Git**: only commit and push when explicitly asked to. Otherwise, apply and describe changes, then wait for confirmation.
+- **Last-updated line**: `index.html` has a `<p class="last-updated">Page last updated: D Month YYYY</p>` right below the birthday banner. Update it to the current date as part of any push (include it in the same commit as the rest of the change) — it should always reflect the date of the last pushed commit, not just the last edit made locally.
 - **Data source**: the stats on the site are transcribed from an external Excel workbook (`Stats - 26-27.xlsx`, not in this repo) that the user maintains separately. "Update the tables" requests mean: read the current numbers from that workbook, cross-check them against each other (e.g. goals-by-game column sums should equal the season goal total), then update every dependent table on the site to match.
 
 ## Architecture

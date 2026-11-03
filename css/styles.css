@@ -46,6 +46,8 @@ h2 { color: var(--green-dark); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spa
 .birthday-info { margin: 0; color: var(--green-dark); font-size: .95rem; font-weight: 600; }
 .birthday-info strong { font-weight: 800; }
 
+.last-updated { width: 100%; max-width: 1080px; margin: 10px auto 0; padding: 0 2px; color: var(--muted); font-size: .72rem; font-weight: 600; letter-spacing: .02em; text-align: right; }
+
 .contents-nav { width: 100%; max-width: 1080px; margin: 0 auto; padding: 28px 0 48px; }
 .contents-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 10px; padding: 18px 22px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
 .contents-label { color: var(--muted); font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
